@@ -11,10 +11,10 @@ export class SpotifyService {
   constructor(private http: HttpClient) { }
 
   searchTrack(query: string) {
-    const url = `https://api.spotify.com/v1/search?q=${query}=TRADE&type=track`;
+    const url = `https://api.spotify.com/v1/search?q=${query}&type=track`;
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQBe_8oLLEIOfLE8qnGV1oFzbnyBwA6Y3zxpdoLbBEqdPwBmewIB-l3PoS3yXhEyDoitirehX7sRLVvyHrYJOhlMuIa6-h5qrlhqxVKUz2S5wJMkwEAsGA5nHYkqVxnTctw7Q0eAOB8oCktm1Pa9wKSA62u0EnTirNjYBSdDDHz8OFQ4oiCG8GCwtey9mRPIAb6t'
+        'Bearer BQDRsVhoCG12WqQNuiqhaCzn2JcvFroRgIsEJbqRZLMzX_SSCY_-4C7BbWv7m8DQuQpdpeFJJZSqHiMnFDldkne9Kn1AiDWWtbhvwlQVG-JV3RqHcwoTOd4PqXLnCp5915uBzDTk08D6v6HogXts5tqiR7vsOcGVhieOEZSyo7D6NHlmKdiLgzshjieMtg2P-TK1'
     });
 
     let obsTracks = this.http.get(url, { headers });
