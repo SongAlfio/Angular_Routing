@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { SpotifyService } from '../spotify.service';
 import { Location } from '@angular/common'
 
-
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
@@ -15,15 +14,17 @@ export class ArtistComponent implements OnInit{
   artist : any; 
   spotifyServiceObs!: Observable<Object>;
 
-
+  
+  
   constructor(
     private route: ActivatedRoute, 
     private service: SpotifyService,
-    private location: Location  ) { }
+    private location: Location 
+    ) {}
 
 
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.routeObs = this.route.paramMap;
     this.routeObs.subscribe(this.getRouterParam);
     }
@@ -35,9 +36,10 @@ export class ArtistComponent implements OnInit{
       console.log (artistId); 
       this.spotifyServiceObs = this.service.getArtist(artistId) ;
       this.spotifyServiceObs.subscribe((data)=>this.artist = data)
+      
     }
-   
-   
+
+    
     back() : void
      {
        this.location.back();
