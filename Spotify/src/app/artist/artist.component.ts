@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SpotifyService } from '../spotify.service';
 import { Location } from '@angular/common'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-artist',
@@ -13,15 +14,17 @@ export class ArtistComponent implements OnInit{
   routeObs!: Observable<ParamMap>; 
   artist : any; 
   spotifyServiceObs!: Observable<Object>;
-
+  data!: Object;
+  loading!: boolean;
+  o!:Observable<Object>;
   
   
   constructor(
     private route: ActivatedRoute, 
     private service: SpotifyService,
-    private location: Location 
+    private location: Location,
+    public http: HttpClient 
     ) {}
-
 
 
     ngOnInit(): void {

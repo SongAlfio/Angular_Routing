@@ -3,6 +3,13 @@
     <p>
         <img src="{{ album.images[1].url }}">
     </p>
-    
+    <h3> By <a [routerLink]="['/artists', album.artists[0].id]"> {{ album.artists[0].name }} </a></h3>
+    <h1>Tracks</h1>
+
+    <div *ngFor="let track of album.tracks.items">
+        <a [routerLink]="['/tracks', track.id]"> {{track.name}} </a>
+        <hr>
+    </div>
+
     <p><a href (click)="back()">Back</a></p>
 </div>

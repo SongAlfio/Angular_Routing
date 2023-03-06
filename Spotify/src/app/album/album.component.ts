@@ -13,7 +13,6 @@ export class AlbumComponent implements OnInit{
   routeObs!: Observable<ParamMap>; 
   album : any; 
   spotifyServiceObs!: Observable<Object>;
-
   
   
   constructor(
@@ -35,8 +34,7 @@ export class AlbumComponent implements OnInit{
       let albumId = params.get('id'); 
       console.log (albumId); 
       this.spotifyServiceObs = this.service.getAlbum(albumId) ;
-      this.spotifyServiceObs.subscribe((data)=>this.album = data)
-      
+      this.spotifyServiceObs.subscribe((data)=>this.album = data);
     }
 
     
