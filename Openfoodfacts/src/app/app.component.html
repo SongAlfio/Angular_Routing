@@ -1,3 +1,12 @@
 <body>
-  <button (click) = "makeRequest()" type="button">Ciao</button>
+  <h1>Search</h1>
+
+  <p>
+    <input type="text" #newquery>
+    <button (click) = "makeRequest()" type="button">Invia</button>
+  </p>
+  
+  <div *ngIf="results">
+      No tracks were found with the term '{{ namefood }}'
+  </div>
 </body>
