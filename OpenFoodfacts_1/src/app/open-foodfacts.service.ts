@@ -11,8 +11,8 @@ export class OpenFoodfactsService {
   searchTrack(query: string) {
     const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${query}&page_size=2&json=true`;
     const headers = new HttpHeaders({'User-Agent' : 'MyFoodApp - Android - Version 1.0 - https://myfoodapp.com'});
-    let obsTracks = this.http.get(url, { headers });
-    return obsTracks;
+    let FoodObs = this.http.get(url, { headers });
+    return FoodObs;
     
  //Ritorno un observable ai componenti che richiedono il servizio
   }
